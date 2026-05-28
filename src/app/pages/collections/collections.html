@@ -1,0 +1,86 @@
+<app-header />
+
+<main class="page-collections" id="main-content">
+  <!-- Header & Filters -->
+  <header class="collections-header">
+    <h1 class="collections-header__title">The Collections</h1>
+    <div class="hairline hairline--long" aria-hidden="true"></div>
+
+    <div class="filters-bar">
+      <span class="filters-bar__label">Filter By:</span>
+      
+      <div class="filters-bar__buttons">
+        <!-- Material Filter -->
+        <div class="sort-select-wrapper">
+          <select class="sort-select" aria-label="Filter by Material" (change)="updateMaterial($event)">
+            <option value="All">Material (All)</option>
+            @for (material of materials; track material) {
+              @if (material !== 'All') {
+                <option [value]="material">{{ material }}</option>
+              }
+            }
+          </select>
+          <span class="material-symbols-outlined sort-select__icon" aria-hidden="true">expand_more</span>
+        </div>
+
+        <!-- Movement Filter -->
+        <div class="sort-select-wrapper">
+          <select class="sort-select" aria-label="Filter by Movement" (change)="updateMovement($event)">
+            <option value="All">Movement (All)</option>
+            @for (movement of movements; track movement) {
+              @if (movement !== 'All') {
+                <option [value]="movement">{{ movement }}</option>
+              }
+            }
+          </select>
+          <span class="material-symbols-outlined sort-select__icon" aria-hidden="true">expand_more</span>
+        </div>
+      </div>
+
+      <div class="sort-bar">
+        <label for="sort-select" class="sort-bar__label">Sort:</label>
+        <div class="sort-select-wrapper">
+          <select id="sort-select" class="sort-select" (change)="updateSort($event)">
+            @for (option of sortOptions; track option) {
+              <option [value]="option">{{ option }}</option>
+            }
+          </select>
+          <span class="material-symbols-outlined sort-select__icon" aria-hidden="true">expand_more</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Product Grid -->
+  <div class="product-grid" role="list" aria-label="Collections">
+    @for (watch of filteredWatches(); track watch.id; let i = $index) {
+      <article class="product-card" role="listitem" [class.product-card--offset]="i % 2 !== 0">
+        <div class="product-card__img-wrap">
+          <img
+            [src]="watch.imageUrl"
+            [alt]="watch.imageAlt"
+            class="product-card__img"
+            loading="lazy"
+          />
+          <div class="product-card__overlay">
+            <button class="btn btn--outline" (click)="onInquire(watch.id)" [attr.aria-label]="'Inquire about ' + watch.name">
+              INQUIRE
+            </button>
+          </div>
+        </div>
+        
+        <div class="product-card__info">
+          <h3 class="product-card__name">{{ watch.name }}</h3>
+          <p class="product-card__spec">{{ watch.spec }}</p>
+          <p class="product-card__price">{{ watch.price }}</p>
+        </div>
+      </article>
+    }
+  </div>
+
+  <div class="load-more">
+    <button class="btn btn--outline btn--wide">LOAD MORE</button>
+  </div>
+</main>
+
+<app-footer />
