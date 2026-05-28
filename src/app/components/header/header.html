@@ -32,12 +32,25 @@
       <button class="icon-btn" id="search-btn" aria-label="Search">
         <span class="material-symbols-outlined">search</span>
       </button>
-      <button class="icon-btn" id="account-btn" aria-label="My account">
-        <span class="material-symbols-outlined">person</span>
-      </button>
-      <button class="icon-btn" id="bag-btn" aria-label="Shopping bag">
+      <div class="profile-container">
+        <button class="icon-btn" id="account-btn" aria-label="My account" (click)="toggleProfileMenu($event)">
+          <span class="material-symbols-outlined">person</span>
+        </button>
+
+        @if (isProfileMenuOpen()) {
+          <div class="profile-menu">
+            <a routerLink="/profile" class="profile-menu__link" (click)="isProfileMenuOpen.set(false)">My Account</a>
+            <a routerLink="/login" class="profile-menu__link" (click)="isProfileMenuOpen.set(false)">Log In</a>
+            <a routerLink="/signup" class="profile-menu__link" (click)="isProfileMenuOpen.set(false)">Sign Up</a>
+          </div>
+        }
+      </div>
+      <a class="icon-btn icon-btn--cart" id="bag-btn" aria-label="Shopping bag" routerLink="/cart" style="text-decoration: none;">
         <span class="material-symbols-outlined">shopping_bag</span>
-      </button>
+        @if (cartService.cartCount() > 0) {
+          <span class="cart-badge">{{ cartService.cartCount() }}</span>
+        }
+      </a>
     </div>
 
   </div>

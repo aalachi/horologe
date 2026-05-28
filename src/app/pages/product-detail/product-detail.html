@@ -1,0 +1,150 @@
+<app-header />
+
+<main class="page-product-detail">
+  <!-- Hero Section -->
+  <section class="product-hero">
+    <div class="product-hero__text section-fade-in">
+      <div class="product-hero__overline-wrap">
+        <span class="product-hero__overline">COLLECTION PRIVÉE</span>
+      </div>
+      <h1 class="product-hero__title">Lune Perpétuelle</h1>
+      <p class="product-hero__body">
+        A celestial masterpiece in platinum. Engineering meets the poetic rotation of the moon in our most sophisticated 39mm complication yet.
+      </p>
+      <div class="product-hero__actions">
+        <div class="product-hero__price">€ 68,000</div>
+        <div class="product-hero__button-group">
+          <button class="btn btn--solid" (click)="addToCart()">
+            ADD TO CART
+          </button>
+          <a class="btn btn--outline" routerLink="/cart">
+            PROCEED TO CHECKOUT
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="product-hero__media section-fade-in">
+      <img
+        src="/images/lune-perpetuelle-hero.jpg"
+        alt="High-resolution studio photograph of Lune Perpétuelle platinum wristwatch"
+        class="product-hero__img"
+        loading="eager"
+      />
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="divider-wrap">
+    <div class="hairline hairline--long"></div>
+  </div>
+
+  <!-- Details Section -->
+  <section class="product-details">
+    <!-- Visual Narratives -->
+    <div class="visual-narratives">
+      <div class="visual-grid">
+        <div class="visual-card section-fade-in">
+          <div class="visual-card__img-wrap">
+            <img
+              src="/images/lune-perpetuelle-movement.jpg"
+              alt="Macro close-up of mechanical watch movement"
+              class="visual-card__img visual-card__img--grayscale-hover"
+              loading="lazy"
+            />
+          </div>
+          <div class="visual-card__label">DETAIL 01: CALIBRE HP-08</div>
+        </div>
+        
+        <div class="visual-card visual-card--offset section-fade-in">
+          <div class="visual-card__img-wrap">
+            <img
+              src="/images/lune-perpetuelle-case.jpg"
+              alt="Detailed shot of luxury watch case side"
+              class="visual-card__img visual-card__img--zoom-hover"
+              loading="lazy"
+            />
+          </div>
+          <div class="visual-card__label">DETAIL 02: CASE FINISHING</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Specifications -->
+    <div class="specs-accordion section-fade-in">
+      <h2 class="specs-accordion__title">Technical Specifications</h2>
+      
+      <div class="accordion-list">
+        <!-- Spec 0 -->
+        <div class="accordion-item" [class.active]="activeSpec() === 0">
+          <button class="accordion-btn" (click)="toggleSpec(0)" [attr.aria-expanded]="activeSpec() === 0">
+            <span class="accordion-label">CALIBRE</span>
+            <span class="material-symbols-outlined accordion-icon" aria-hidden="true">{{ activeSpec() === 0 ? 'remove' : 'add' }}</span>
+          </button>
+          <div class="accordion-content">
+            <p class="accordion-body">
+              HP-08 Manual Winding. Each component is hand-finished with Côtes de Genève and anglage, ensuring horological excellence in every rotation.
+            </p>
+          </div>
+        </div>
+
+        <!-- Spec 1 -->
+        <div class="accordion-item" [class.active]="activeSpec() === 1">
+          <button class="accordion-btn" (click)="toggleSpec(1)" [attr.aria-expanded]="activeSpec() === 1">
+            <span class="accordion-label">POWER RESERVE</span>
+            <span class="material-symbols-outlined accordion-icon" aria-hidden="true">{{ activeSpec() === 1 ? 'remove' : 'add' }}</span>
+          </button>
+          <div class="accordion-content">
+            <p class="accordion-body">
+              A robust 72-hour power reserve allows for reliability through the weekend, maintained by a double-barrel system designed for torque consistency.
+            </p>
+          </div>
+        </div>
+
+        <!-- Spec 2 -->
+        <div class="accordion-item" [class.active]="activeSpec() === 2">
+          <button class="accordion-btn" (click)="toggleSpec(2)" [attr.aria-expanded]="activeSpec() === 2">
+            <span class="accordion-label">CASE & DIAMETER</span>
+            <span class="material-symbols-outlined accordion-icon" aria-hidden="true">{{ activeSpec() === 2 ? 'remove' : 'add' }}</span>
+          </button>
+          <div class="accordion-content">
+            <p class="accordion-body">
+              Platinum 950 case measuring 39mm in diameter with a slim 10.2mm profile. Sapphire crystal front and caseback. Water-resistant to 3 ATM.
+            </p>
+          </div>
+        </div>
+
+        <!-- Spec 3 -->
+        <div class="accordion-item" [class.active]="activeSpec() === 3">
+          <button class="accordion-btn" (click)="toggleSpec(3)" [attr.aria-expanded]="activeSpec() === 3">
+            <span class="accordion-label">COMPLICATIONS</span>
+            <span class="material-symbols-outlined accordion-icon" aria-hidden="true">{{ activeSpec() === 3 ? 'remove' : 'add' }}</span>
+          </button>
+          <div class="accordion-content">
+            <p class="accordion-body">
+              Perpetual Moonphase accurate to 1,027 years. Outsize Date display. Central hour and minute hands. Small seconds sub-dial.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter / Contact Transition Section -->
+  <section class="inquiry-section" id="inquiry-section">
+    <div class="inquiry-container section-fade-in">
+      <span class="inquiry__overline">PRIVATE CONCIERGE</span>
+      <h3 class="inquiry__title">Begin Your Journey</h3>
+      <p class="inquiry__body">
+        Our master horologists and boutique specialists are available to guide you through the acquisition of the Lune Perpétuelle.
+      </p>
+      
+      <div class="inquiry__form">
+        <input type="email" class="inquiry__input" placeholder="YOUR EMAIL" aria-label="Your Email" />
+        <button class="btn btn--solid btn--inquiry">REQUEST APPOINTMENT</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<app-footer />

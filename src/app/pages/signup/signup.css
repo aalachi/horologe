@@ -1,0 +1,205 @@
+/* ============================================================
+   Sign Up Page
+   ============================================================ */
+:host { display: block; height: 100vh; }
+
+.page-signup {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--section-padding) var(--margin-mobile);
+}
+
+@media (min-width: 768px) {
+  .page-signup {
+    padding-left: var(--margin-desktop);
+    padding-right: var(--margin-desktop);
+  }
+}
+
+.signup-card {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Entrance animation */
+  animation: fadeInUp 1s cubic-bezier(0.2, 0, 0, 1) forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.signup-brand {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.signup-brand__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-headline-lg);
+  font-weight: var(--fw-regular);
+  color: var(--color-charcoal);
+  margin-bottom: 16px;
+}
+
+.signup-brand__body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-md);
+  font-weight: 300;
+  color: var(--color-secondary);
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.signup-content {
+  width: 100%;
+}
+
+/* Form Styles */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Space between inputs slightly larger than login */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: 8px;
+}
+
+.form-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(196, 199, 199, 1); /* outline-variant */
+  padding: 12px 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-body-md);
+  color: var(--color-charcoal);
+  outline: none;
+  transition: border-color 0.5s ease;
+}
+.form-input::placeholder {
+  color: rgba(196, 199, 199, 0.5);
+}
+.form-input:focus {
+  border-bottom-color: var(--color-charcoal);
+}
+.form-group:focus-within .form-label {
+  color: var(--color-charcoal);
+}
+
+/* Actions */
+.signup-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Divider has padding */
+}
+
+.btn {
+  font-family: var(--font-sans);
+  font-size: var(--text-btn);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 600ms cubic-bezier(0.2, 0, 0, 1);
+  box-sizing: border-box;
+}
+
+.btn--full-width {
+  width: 100%;
+}
+
+.btn--solid {
+  background-color: var(--color-charcoal);
+  color: var(--color-ivory);
+  border: none;
+}
+.btn--solid:hover {
+  background-color: rgba(199, 198, 197, 1); /* secondary-fixed-dim */
+  color: var(--color-charcoal);
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0;
+}
+.divider-line {
+  width: 48px;
+  height: 1px;
+  background-color: rgba(196, 199, 199, 0.3);
+}
+.divider-text {
+  padding: 0 16px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: var(--fw-semibold);
+  color: rgba(116, 120, 120, 1); /* outline */
+  text-transform: uppercase;
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-charcoal);
+  border: 1px solid rgba(196, 199, 199, 0.5); /* outline-variant */
+  gap: 12px;
+}
+.btn--outline:hover {
+  border-color: var(--color-charcoal);
+}
+
+.google-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Footer */
+.signup-footer {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.signup-footer__text {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-md);
+  color: rgba(68, 71, 72, 1); /* on-surface-variant */
+}
+
+.signup-footer__link {
+  color: var(--color-charcoal);
+  font-weight: var(--fw-semibold);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(196, 199, 199, 0.5);
+  transition: text-decoration-color 0.3s ease;
+  margin-left: 4px;
+  cursor: pointer;
+}
+.signup-footer__link:hover {
+  text-decoration-color: var(--color-charcoal);
+}

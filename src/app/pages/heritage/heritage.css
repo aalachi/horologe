@@ -1,0 +1,277 @@
+/* ============================================================
+   Heritage Page
+   ============================================================ */
+:host {
+  display: block;
+}
+
+.page-heritage {
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: var(--section-padding);
+}
+
+/* Animations */
+.section-fade-in {
+  animation: fadeInUp 1s cubic-bezier(0.2, 0, 0, 1) forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.heritage-hero.section-fade-in { animation-delay: 0.1s; }
+.layout-split:nth-of-type(1).section-fade-in { animation-delay: 0.3s; }
+.layout-split:nth-of-type(2).section-fade-in { animation-delay: 0.5s; }
+
+/* ---- Hero Section ---- */
+.heritage-hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--margin-mobile);
+  margin-bottom: var(--section-padding);
+  text-align: center;
+}
+
+.heritage-hero__overline {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: 16px;
+}
+
+.heritage-hero__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-display-mobile);
+  font-weight: var(--fw-regular);
+  color: var(--color-charcoal);
+  margin-bottom: 32px;
+}
+
+.hairline {
+  height: 1px;
+  background-color: var(--color-outline-var);
+}
+.hairline--short {
+  width: 96px;
+  margin: 0 auto 32px auto;
+}
+.hairline--long {
+  width: 100%;
+  max-width: 896px;
+  margin: 0 auto;
+  opacity: 0.5;
+}
+
+.heritage-hero__body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-lg);
+  font-weight: var(--fw-light);
+  line-height: 1.6;
+  letter-spacing: var(--ls-body);
+  color: var(--color-secondary);
+  max-width: 672px;
+  margin: 0 auto;
+}
+
+/* ---- Layout Split ---- */
+.layout-split {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--margin-mobile);
+  margin-bottom: var(--section-padding);
+}
+
+.layout-split__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter);
+  align-items: center;
+}
+
+.layout-split__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-split__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-headline-lg);
+  font-weight: var(--fw-regular);
+  color: var(--color-charcoal);
+  margin-bottom: 24px;
+}
+
+.layout-split__body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-md);
+  font-weight: var(--fw-regular);
+  line-height: 1.6;
+  color: var(--color-secondary);
+  margin-bottom: 24px;
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: var(--text-btn);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-btn);
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+  border-bottom: 1px solid var(--color-charcoal);
+  padding-bottom: 4px;
+  align-self: flex-start;
+  transition: color var(--dur-base) var(--ease-luxury), border-color var(--dur-base) var(--ease-luxury);
+}
+.btn-link:hover {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+.btn-link .material-symbols-outlined {
+  font-size: 20px;
+}
+
+.layout-split__media {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-color: var(--color-ivory-low);
+  overflow: hidden;
+}
+
+/* Parallax */
+.parallax-bg {
+  position: absolute;
+  inset: 0;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax-bg--artisan {
+  background-image: url('/images/watchmaker-workshop.jpg');
+}
+
+.parallax-bg--mastery {
+  background-image: url('/images/macro-flagship-watch.jpg');
+}
+
+/* Quote Overlay */
+.quote-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  text-align: center;
+  background-color: rgba(253, 248, 248, 0.4);
+}
+.quote-overlay__icon {
+  font-size: 60px;
+  font-weight: 300;
+  color: rgba(28, 27, 27, 0.2);
+  margin-bottom: 24px;
+}
+.quote-overlay__text {
+  font-family: var(--font-serif);
+  font-size: var(--text-headline-lg);
+  font-weight: var(--fw-regular);
+  font-style: italic;
+  color: rgba(28, 27, 27, 0.5);
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.timeline__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(196, 199, 199, 0.3);
+  padding-bottom: 16px;
+}
+
+.timeline__label {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+}
+
+.timeline__value {
+  font-family: var(--font-serif);
+  font-size: var(--text-headline-sm);
+  font-weight: var(--fw-regular);
+  color: var(--color-secondary);
+}
+
+/* Divider Wrap */
+.divider-wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--margin-mobile);
+  margin-bottom: var(--section-padding);
+}
+
+/* ---- Responsive ---- */
+@media (min-width: 768px) {
+  .heritage-hero {
+    padding: 0 var(--margin-desktop);
+  }
+  .heritage-hero__title {
+    font-size: var(--text-display-lg);
+  }
+  
+  .layout-split {
+    padding: 0 var(--margin-desktop);
+  }
+  
+  .layout-split__grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  /* Regular Layout */
+  .layout-split:not(.layout-split--reverse) .layout-split__text {
+    grid-column: 2 / 7;
+    grid-row: 1;
+    order: 1;
+  }
+  .layout-split:not(.layout-split--reverse) .layout-split__media {
+    grid-column: 8 / 13;
+    grid-row: 1;
+    order: 2;
+  }
+
+  /* Reverse Layout */
+  .layout-split--reverse .layout-split__media {
+    grid-column: 1 / 7;
+    grid-row: 1;
+    order: 1;
+    height: 700px;
+  }
+  .layout-split--reverse .layout-split__text {
+    grid-column: 8 / 13;
+    grid-row: 1;
+    order: 2;
+  }
+}

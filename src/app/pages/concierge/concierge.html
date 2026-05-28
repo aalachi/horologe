@@ -1,0 +1,183 @@
+<app-header />
+
+<main class="page-concierge" id="main-content">
+  <!-- Hero Section -->
+  <section class="concierge-hero">
+    <div class="concierge-hero__bg">
+      <img
+        src="/images/boutique-interior.jpg"
+        alt="Elegant interior of a luxury watch boutique"
+        class="concierge-hero__img"
+        loading="eager"
+      />
+      <div class="concierge-hero__overlay"></div>
+    </div>
+    
+    <div class="concierge-hero__content glass-panel">
+      <h1 class="concierge-hero__title">Concierge</h1>
+      <p class="concierge-hero__subtitle">
+        White-glove service tailored to your precise needs. Schedule a consultation or find assistance with your timepiece.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services & Consultation Bento -->
+  <section class="bento-section">
+    <div class="bento-grid">
+      <!-- Appointment Form (Spans 7 cols on desktop) -->
+      <div class="bento-card bento-card--form">
+        <h2 class="bento-card__title">Request an Appointment</h2>
+        <form class="appointment-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="service-type">Service Type</label>
+              <select id="service-type" class="form-input">
+                <option>Virtual Consultation</option>
+                <option>In-store Appointment</option>
+                <option>Servicing Drop-off</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="boutique">Preferred Boutique</label>
+              <select id="boutique" class="form-input">
+                <option>Geneva Flagship</option>
+                <option>London Mayfair</option>
+                <option>New York Fifth Ave</option>
+                <option>Tokyo Ginza</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="first-name">First Name</label>
+              <input type="text" id="first-name" class="form-input" placeholder="Enter your first name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="last-name">Last Name</label>
+              <input type="text" id="last-name" class="form-input" placeholder="Enter your last name" />
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address</label>
+            <input type="email" id="email" class="form-input" placeholder="Enter your email address" />
+          </div>
+          
+          <div class="form-submit">
+            <button type="button" class="btn">Submit Request</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Quick Services (Spans 5 cols on desktop) -->
+      <div class="bento-side">
+        <a href="#" class="service-card service-card--large">
+          <span class="material-symbols-outlined service-card__icon" aria-hidden="true">build</span>
+          <h3 class="service-card__title">Servicing & Care</h3>
+          <p class="service-card__desc">
+            Initiate a service request or discover our recommended care routines to preserve your timepiece.
+          </p>
+          <span class="service-card__link">
+            Explore Services 
+            <span class="material-symbols-outlined icon-arrow" aria-hidden="true">arrow_forward</span>
+          </span>
+        </a>
+        
+        <div class="bento-row">
+          <a href="#" class="service-card service-card--small">
+            <span class="material-symbols-outlined service-card__icon" aria-hidden="true">verified</span>
+            <h3 class="service-card__title">Warranty</h3>
+            <span class="service-card__link">Register</span>
+          </a>
+          <a href="#" class="service-card service-card--small">
+            <span class="material-symbols-outlined service-card__icon" aria-hidden="true">local_shipping</span>
+            <h3 class="service-card__title">Tracking</h3>
+            <span class="service-card__link">Check Status</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="divider-wrap">
+      <div class="hairline"></div>
+    </div>
+  </section>
+
+  <!-- FAQ & Contact -->
+  <section class="faq-contact">
+    <div class="faq-contact__grid">
+      <!-- Contact Details -->
+      <div class="contact-details">
+        <h2 class="contact-details__title">Direct Contact</h2>
+        
+        <div class="contact-item">
+          <span class="contact-item__label">Global Support Line</span>
+          <a href="tel:+41221234567" class="contact-item__value">+41 22 123 4567</a>
+        </div>
+        
+        <div class="contact-item">
+          <span class="contact-item__label">Email</span>
+          <a href="mailto:concierge@horologe.com" class="contact-item__value">concierge@horologe.com</a>
+        </div>
+        
+        <div class="contact-item">
+          <span class="contact-item__label">Operating Hours</span>
+          <p class="contact-item__value contact-item__value--text">
+            Monday – Friday<br />
+            9:00 AM – 6:00 PM (CET)
+          </p>
+        </div>
+      </div>
+      
+      <!-- FAQ Accordion -->
+      <div class="faq-accordion">
+        <h2 class="faq-accordion__title">Common Inquiries</h2>
+        <div class="accordion-list">
+          
+          <!-- Item 0 -->
+          <div class="accordion-item" [class.active]="activeFaq() === 0">
+            <button class="accordion-btn" (click)="toggleFaq(0)" [attr.aria-expanded]="activeFaq() === 0">
+              <span class="accordion-question">How often should I service my watch?</span>
+              <span class="material-symbols-outlined accordion-icon" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="accordion-content">
+              <p class="accordion-answer">
+                We recommend a complete service every 4 to 5 years, depending on your model and daily usage. Regular water resistance checks should be performed annually.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Item 1 -->
+          <div class="accordion-item" [class.active]="activeFaq() === 1">
+            <button class="accordion-btn" (click)="toggleFaq(1)" [attr.aria-expanded]="activeFaq() === 1">
+              <span class="accordion-question">What is covered under the HOROLOGE warranty?</span>
+              <span class="material-symbols-outlined accordion-icon" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="accordion-content">
+              <p class="accordion-answer">
+                Our international warranty covers manufacturing defects for a period of five years from the date of purchase. It does not cover normal wear and tear or damage caused by improper handling.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Item 2 -->
+          <div class="accordion-item" [class.active]="activeFaq() === 2">
+            <button class="accordion-btn" (click)="toggleFaq(2)" [attr.aria-expanded]="activeFaq() === 2">
+              <span class="accordion-question">Can I track the status of my repair online?</span>
+              <span class="material-symbols-outlined accordion-icon" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="accordion-content">
+              <p class="accordion-answer">
+                Yes, once your timepiece is received at our service center, you will be provided with a unique tracking code to monitor its progress through our dedicated portal.
+              </p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<app-footer />
