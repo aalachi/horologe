@@ -7,6 +7,10 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail';
 import { CartComponent } from './pages/cart/cart';
 import { LoginComponent } from './pages/login/login';
 import { SignupComponent } from './pages/signup/signup';
+import { ProfileComponent } from './pages/profile/profile';
+import { ProfileDashboardComponent } from './pages/profile/dashboard/profile-dashboard';
+import { ProfileCollectionComponent } from './pages/profile/collection/profile-collection';
+import { SearchComponent } from './pages/search/search';
 
 export const routes: Routes = [
   {
@@ -48,6 +52,27 @@ export const routes: Routes = [
     path: 'signup',
     component: SignupComponent,
     title: 'Join the Maison | HOROLOGE',
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    children: [
+      {
+        path: '',
+        component: ProfileDashboardComponent,
+        title: 'Maison Account | HOROLOGE',
+      },
+      {
+        path: 'collection',
+        component: ProfileCollectionComponent,
+        title: 'My Collection | HOROLOGE',
+      },
+    ]
+  },
+  {
+    path: 'search',
+    component: SearchComponent,
+    title: 'Search Results | HOROLOGE',
   },
 
   {
