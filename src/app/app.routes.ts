@@ -10,6 +10,8 @@ import { SignupComponent } from './pages/signup/signup';
 import { ProfileComponent } from './pages/profile/profile';
 import { ProfileDashboardComponent } from './pages/profile/dashboard/profile-dashboard';
 import { ProfileCollectionComponent } from './pages/profile/collection/profile-collection';
+import { ProfileServiceHistoryComponent } from './pages/profile/service-history/profile-service-history';
+import { ProfilePreferencesComponent } from './pages/profile/preferences/profile-preferences';
 import { SearchComponent } from './pages/search/search';
 
 export const routes: Routes = [
@@ -66,6 +68,16 @@ export const routes: Routes = [
         path: 'collection',
         component: ProfileCollectionComponent,
         title: 'My Collection | HOROLOGE',
+      },
+      {
+        path: 'service-history',
+        component: ProfileServiceHistoryComponent,
+        title: 'Service History | HOROLOGE',
+      },
+      {
+        path: 'preferences',
+        component: ProfilePreferencesComponent,
+        title: 'Preferences | HOROLOGE',
       },
     ]
   },
