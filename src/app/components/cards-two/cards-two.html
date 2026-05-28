@@ -1,0 +1,46 @@
+<section class="section spotlight" id="spotlight" aria-labelledby="spotlight-heading">
+  <div class="spotlight__grid">
+
+    <!-- Text Column -->
+    <div class="spotlight__text">
+      <span class="overline">Masterpiece Collection</span>
+      <h2 class="spotlight__title" id="spotlight-heading">Tourbillon Squelette</h2>
+      <p class="spotlight__body">
+        A symphony of mechanical mastery. The open-worked dial reveals the intricate choreography
+        of the tourbillon escapement, housed within a brushed platinum case. A testament to
+        uncompromising horological architecture.
+      </p>
+
+      <!-- Specs table -->
+      <dl class="specs" aria-label="Watch specifications">
+        @for (spec of specs; track spec.label) {
+          <div class="specs__row">
+            <dt class="specs__label">{{ spec.label }}</dt>
+            <dd class="specs__value">{{ spec.value }}</dd>
+          </div>
+        }
+      </dl>
+
+      <button
+        class="btn btn--ghost"
+        id="inquire-btn"
+        (click)="onInquireClick()"
+        aria-label="Inquire about the Tourbillon Squelette">
+        Inquire Now
+      </button>
+    </div>
+
+    <!-- Image Column -->
+    <div class="spotlight__media">
+      <div class="spotlight__img-wrap">
+        <img
+          [src]="imageUrl"
+          alt="Tourbillon Squelette — open-worked skeletonized movement close-up"
+          class="spotlight__img"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>

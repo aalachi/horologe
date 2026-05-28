@@ -1,0 +1,44 @@
+<nav class="navbar" aria-label="Main navigation">
+  <div class="navbar__inner">
+
+    <!-- Left: Nav links (desktop) -->
+    <div class="navbar__links" role="menubar">
+      <a routerLink="/"
+         routerLinkActive="nav-link--active"
+         [routerLinkActiveOptions]="{ exact: true }"
+         class="nav-link"
+         role="menuitem">Boutique</a>
+      <a routerLink="/collections"
+         routerLinkActive="nav-link--active"
+         class="nav-link"
+         role="menuitem">Collections</a>
+      <a routerLink="/heritage"
+         routerLinkActive="nav-link--active"
+         class="nav-link"
+         role="menuitem">Heritage</a>
+      <a routerLink="/concierge"
+         routerLinkActive="nav-link--active"
+         class="nav-link"
+         role="menuitem">Concierge</a>
+    </div>
+
+    <!-- Centre: Brand Logo -->
+    <a routerLink="/" class="navbar__logo" aria-label="HOROLOGE – go to homepage">
+      HOROLOGE
+    </a>
+
+    <!-- Right: Icon actions -->
+    <div class="navbar__icons">
+      <button class="icon-btn" id="search-btn" aria-label="Search">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+      <button class="icon-btn" id="account-btn" aria-label="My account">
+        <span class="material-symbols-outlined">person</span>
+      </button>
+      <button class="icon-btn" id="bag-btn" aria-label="Shopping bag">
+        <span class="material-symbols-outlined">shopping_bag</span>
+      </button>
+    </div>
+
+  </div>
+</nav>

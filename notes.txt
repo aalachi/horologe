@@ -1,0 +1,5 @@
+#	Screen	Dimensions	Screen ID
+1	Boutique — Homepage	2560 × 6190	ad58bcdb
+2	Collections — Product Listing	2560 × 3122	db3a8c59
+3	Heritage — Our Story	2560 × 5328	0abbff64
+4	Concierge — High-Touch Service	2560 × 4798	896a6b0b

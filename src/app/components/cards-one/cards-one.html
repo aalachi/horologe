@@ -1,0 +1,35 @@
+<section class="section arrivals" id="discover" aria-labelledby="arrivals-heading">
+
+  <!-- Section header -->
+  <div class="section__header">
+    <div>
+      <h2 class="section__title" id="arrivals-heading">New Arrivals</h2>
+      <div class="hairline hairline--short" aria-hidden="true"></div>
+    </div>
+    <a href="/collections" class="label-link" aria-label="View all watches in the collection">
+      View All
+      <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+    </a>
+  </div>
+
+  <!-- Carousel -->
+  <div class="carousel" role="list" aria-label="New arrivals watch carousel" id="arrivals-carousel">
+    @for (watch of watches; track watch.id) {
+      <article class="watch-card" role="listitem" [id]="'card-' + watch.id">
+        <div class="watch-card__img-wrap">
+          <img
+            [src]="watch.imageUrl"
+            [alt]="watch.imageAlt"
+            class="watch-card__img"
+            loading="lazy"
+          />
+        </div>
+        <div class="watch-card__info">
+          <h3 class="watch-card__name">{{ watch.name }}</h3>
+          <p class="watch-card__price">{{ watch.price }}</p>
+        </div>
+      </article>
+    }
+  </div>
+
+</section>

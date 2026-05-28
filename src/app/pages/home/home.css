@@ -1,0 +1,22 @@
+/* Home Page — layout glue */
+:host {
+  display: block;
+}
+
+/* Hairline divider between sections */
+.divider-wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--margin-mobile);
+}
+
+.hairline {
+  height: 1px;
+  background-color: var(--color-outline-var);
+  width: 66.66%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .divider-wrap { padding: 0 var(--margin-desktop); }
+}

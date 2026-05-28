@@ -1,0 +1,121 @@
+/* ============================================================
+   HOROLOGE — Silent Opulence Design System
+   Global tokens, resets, and shared utilities
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+/* ---- Design Tokens ---- */
+:root {
+  /* Colours */
+  --color-ivory:            #fdf8f8;
+  --color-ivory-dim:        #ddd9d8;
+  --color-ivory-low:        #f7f3f2;
+  --color-ivory-mid:        #f1edec;
+  --color-ivory-high:       #ebe7e6;
+  --color-ivory-highest:    #e5e2e1;
+  --color-white:            #ffffff;
+
+  --color-charcoal:         #1a1a1a;
+  --color-charcoal-mid:     #313030;
+  --color-secondary:        #5e5e5d;
+  --color-secondary-alt:    #444748;
+
+  --color-steel:            #a8a9ad;
+  --color-rose-gold:        #e5c1b1;
+  --color-outline:          #747878;
+  --color-outline-var:      #c4c7c7;
+
+  /* Typography */
+  --font-serif:   'Playfair Display', Georgia, serif;
+  --font-sans:    'Inter', system-ui, sans-serif;
+
+  /* Type Scale */
+  --text-display-lg:        64px;
+  --text-display-mobile:    40px;
+  --text-headline-lg:       32px;
+  --text-headline-sm:       24px;
+  --text-body-lg:           18px;
+  --text-body-md:           16px;
+  --text-label:             12px;
+  --text-btn:               14px;
+
+  /* Font Weights */
+  --fw-light:   300;
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold:600;
+
+  /* Letter Spacing */
+  --ls-display:  -0.02em;
+  --ls-label:     0.15em;
+  --ls-btn:       0.05em;
+  --ls-body:      0.01em;
+
+  /* Spacing */
+  --unit:             8px;
+  --gutter:           32px;
+  --margin-desktop:   80px;
+  --margin-mobile:    24px;
+  --section-padding:  120px;
+  --nav-height:       80px;
+
+  /* Layout */
+  --max-width: 1440px;
+
+  /* Motion */
+  --ease-luxury:    cubic-bezier(0.2, 0, 0, 1);
+  --dur-fast:       300ms;
+  --dur-base:       500ms;
+  --dur-slow:       700ms;
+  --dur-reveal:     800ms;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-md);
+  font-weight: var(--fw-regular);
+  line-height: 1.6;
+  color: var(--color-charcoal);
+  background-color: var(--color-ivory);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+
+
+/* ---- Material Icons ---- */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0;
+  vertical-align: middle;
+}

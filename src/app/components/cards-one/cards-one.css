@@ -1,0 +1,119 @@
+/* ============================================================
+   Cards One — New Arrivals Carousel
+   ============================================================ */
+:host {
+  display: block;
+}
+
+/* Section wrapper */
+.section {
+  padding: var(--section-padding) var(--margin-mobile);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Section header row */
+.section__header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.section__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-headline-lg);
+  font-weight: var(--fw-regular);
+  line-height: 1.3;
+  color: var(--color-charcoal);
+}
+
+/* Hairline decorators */
+.hairline {
+  height: 1px;
+  background-color: var(--color-outline-var);
+}
+.hairline--short {
+  width: 96px;
+  margin-top: 8px;
+}
+
+/* "View All" link */
+.label-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-label);
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  transition: color var(--dur-fast) var(--ease-luxury);
+}
+.label-link:hover { color: var(--color-charcoal); }
+.label-link .material-symbols-outlined { font-size: 16px; }
+
+/* ---- Carousel ---- */
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: var(--gutter);
+  padding-bottom: 32px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar { display: none; }
+
+/* ---- Watch Card ---- */
+.watch-card {
+  min-width: 280px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+.watch-card__img-wrap {
+  aspect-ratio: 3 / 4;
+  background-color: var(--color-ivory-low);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.watch-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-luxury);
+}
+.watch-card:hover .watch-card__img {
+  transform: scale(1.05);
+}
+
+.watch-card__info { text-align: center; }
+
+.watch-card__name {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+  margin-bottom: 8px;
+}
+
+.watch-card__price {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-md);
+  font-weight: var(--fw-regular);
+  color: var(--color-secondary);
+}
+
+/* ---- Responsive ---- */
+@media (min-width: 768px) {
+  .section        { padding: var(--section-padding) var(--margin-desktop); }
+  .section__header { flex-direction: row; justify-content: space-between; align-items: flex-end; }
+  .watch-card     { min-width: 350px; }
+}
