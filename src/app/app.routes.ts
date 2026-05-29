@@ -15,6 +15,7 @@ import { ProfilePreferencesComponent } from './pages/profile/preferences/profile
 import { SearchComponent } from './pages/search/search';
 import { JournalComponent } from './pages/journal/journal';
 import { JournalArticleComponent } from './pages/journal-article/journal-article';
+import { CheckoutComponent } from './pages/checkout/checkout';
 
 export const routes: Routes = [
   {
@@ -56,6 +57,11 @@ export const routes: Routes = [
     path: 'cart',
     component: CartComponent,
     title: 'Your Selection | HOROLOGE',
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
+    title: 'Secure Checkout | HOROLOGE',
   },
   {
     path: 'login',

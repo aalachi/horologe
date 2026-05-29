@@ -1,0 +1,148 @@
+<app-header></app-header>
+<main class="page-checkout animate-in">
+  <div class="checkout-layout">
+    <!-- Left Column: Checkout Details -->
+    <div class="checkout-main">
+      <section class="checkout-section">
+        <h1 class="checkout-section__title">Maison Shipping</h1>
+        <div class="checkout-form-grid">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input class="form-input" placeholder="Julian" type="text" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input class="form-input" placeholder="Vanhoutte" type="text" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input class="form-input" placeholder="julian.vanhoutte@maison.com" type="email" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input class="form-input" placeholder="+33 1 23 45 67 89" type="tel" />
+          </div>
+          <div class="form-group form-group--full">
+            <label class="form-label">Shipping Address</label>
+            <input class="form-input" placeholder="Rue de la Paix, 13" type="text" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">City</label>
+            <input class="form-input" placeholder="Paris" type="text" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Postal Code</label>
+            <input class="form-input" placeholder="75002" type="text" />
+          </div>
+        </div>
+      </section>
+
+      <section class="checkout-section checkout-section--payment">
+        <h2 class="checkout-section__title">Secure Payment</h2>
+        <div class="payment-options">
+          <!-- Bank Transfer Option -->
+          <div>
+            <input checked class="payment-option-input" id="bank_transfer" name="payment_method" type="radio" />
+            <label class="payment-option-label" for="bank_transfer">
+              <div class="payment-option-header">
+                <span class="payment-option-title">Bank Transfer</span>
+                <span class="material-symbols-outlined text-primary">account_balance</span>
+              </div>
+              <div class="payment-option-details">
+                <p style="margin-bottom: 0.5rem;">Please transfer the total amount to the following account. Your order will be processed upon receipt of funds.</p>
+                <p>IBAN: FR76 3000 6000 0112 3456 7890 123</p>
+                <p>BIC: HOROFRPPXXX</p>
+                <p>Reference: ORD-2024-8812</p>
+              </div>
+            </label>
+          </div>
+          <!-- PayPal Option -->
+          <div>
+            <input class="payment-option-input" id="paypal" name="payment_method" type="radio" />
+            <label class="payment-option-label" for="paypal">
+              <div class="payment-option-header">
+                <span class="payment-option-title">PayPal</span>
+                <span class="material-symbols-outlined text-primary">payments</span>
+              </div>
+              <button class="paypal-btn" type="button">
+                <span class="paypal-btn-text">Pay with <strong>PayPal</strong></span>
+              </button>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Concierge Note -->
+      <div class="concierge-note">
+        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">concierge</span>
+        <div>
+          <p class="concierge-note__title">Concierge Assistance</p>
+          <p class="concierge-note__text">As you are acquiring limited edition timepieces, our Horologe experts are available to assist with your transaction. Should you require bespoke delivery arrangements, please contact us.</p>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- Right Column: Order Summary Sidebar -->
+    <aside class="checkout-sidebar">
+      <div class="order-summary">
+        <h3 class="order-summary__title">Order Summary</h3>
+        <div class="order-items">
+          <!-- Product 1 -->
+          <div class="order-item">
+            <div class="order-item__image-container">
+              <img alt="Lune Perpétuelle" class="order-item__image" src="https://lh3.googleusercontent.com/aida/ADBb0uj3iTa6HECEMJe0XIBOdKSgWdNJfJtH6w3tEgzdsdLgJV8j9C48Jxhgqo9hQ7GvIhqdI-CxvskxUpDWp8ueSOL8a65Z3s3KZL5_bDoW_D97PesEETJYvsBHP6CRbLu0JJz_OVU5TSwlRW_rF51aNd_h4uKWcvprSyWPfWz1nV8AaYX_5PFrI_o5q5XJLYWjCpEck6-mQPblbKDzPW5FUaM_rKVFIXAZyYie43g7GuIwVHqGou5usTQG" />
+            </div>
+            <div class="order-item__info">
+              <h4 class="order-item__title">Lune Perpétuelle</h4>
+              <p class="order-item__ref"> pelletsRef. HP-2024-LM</p>
+              <p class="order-item__price">$68,000.00</p>
+            </div>
+          </div>
+          <!-- Product 2 -->
+          <div class="order-item">
+            <div class="order-item__image-container">
+              <img alt="Tourbillon Perpétuelle" class="order-item__image" src="https://lh3.googleusercontent.com/aida/ADBb0ujI1JS8Yg6OWzR9NpuZby5MhYw6-bYbB-6R2Q1Ik_kQnX4ZaCchW871GvAdxtI1seoeJWolWtmeel8xhOEg8YNGltOb1KsGnt2NpXhjPg7HWk-LajKxxBJh1q6ueHVlu6Uq14NysF4SrnolZUU2hrMpAGMVcRVDKPPtDw7y70nGHlKeZQ4z0EfYu4pkim5ISW8eVLYGKeFQYRqBRzDeK-JoqjunaiwLTLjC9ufE145fzhVkBWA3DbQPN-M" />
+            </div>
+            <div class="order-item__info">
+              <h4 class="order-item__title">Tourbillon Perpétuelle</h4>
+              <p class="order-item__ref"> pelletsRef. HP-2024-TS</p>
+              <p class="order-item__price">$124,000.00</p>
+            </div>
+          </div>
+          <!-- Product 3 -->
+          <div class="order-item">
+            <div class="order-item__image-container">
+              <img alt="Chronographe Perpétuelle" class="order-item__image" src="https://lh3.googleusercontent.com/aida/ADBb0ujR_E3K1-A-ZfOaW5K1_X6Oq3v4E2F7W7uH8S9D0G1F2E3A4B5C6D7E8F9G0H1I2J3K4L5M6N7O8P9Q0R" />
+            </div>
+            <div class="order-item__info">
+              <h4 class="order-item__title">Chronographe Perpétuelle</h4>
+              <p class="order-item__ref"> pelletsRef. HP-2024-CP</p>
+              <p class="order-item__price">$52,500.00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-totals">
+          <div class="order-totals-row">
+            <span>Subtotal</span>
+            <span>$183,000.00</span>
+          </div>
+          <div class="order-totals-row">
+            <span>Value Added Tax</span>
+            <span>Included</span>
+          </div>
+          <div class="order-totals-row">
+            <span>Express Shipping</span>
+            <span class="text-primary">Complimentary</span>
+          </div>
+          <div class="order-totals-row order-totals-row--total">
+            <span>Order Total</span>
+            <span>$183,000.00</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+<app-footer></app-footer>
