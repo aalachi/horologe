@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { RouterLink, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,4 +7,11 @@ import { RouterLink } from '@angular/router';
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
-export class LoginComponent {}
+export class LoginComponent {
+  private router = inject(Router);
+
+  onSubmit(): void {
+    // In a real app, authenticate first. For now, navigate to profile.
+    this.router.navigate(['/profile']);
+  }
+}

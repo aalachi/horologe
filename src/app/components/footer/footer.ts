@@ -35,7 +35,7 @@ export class FooterComponent {
       title: 'Support',
       links: [
         { label: 'Shipping & Returns', href: '/shipping-returns' },
-        { label: 'Contact',            href: '/contact' },
+        { label: 'Contact',            href: '/concierge' },
       ],
     },
   ];

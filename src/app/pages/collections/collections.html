@@ -55,7 +55,7 @@
   <div class="product-grid" role="list" aria-label="Collections">
     @for (watch of filteredWatches(); track watch.id; let i = $index) {
       <article class="product-card" role="listitem" [class.product-card--offset]="i % 2 !== 0">
-        <div class="product-card__img-wrap">
+        <a [routerLink]="getProductRoute(watch.id)" class="product-card__img-wrap" [attr.aria-label]="'View ' + watch.name">
           <img
             [src]="watch.imageUrl"
             [alt]="watch.imageAlt"
@@ -63,11 +63,9 @@
             loading="lazy"
           />
           <div class="product-card__overlay">
-            <button class="btn btn--outline" (click)="onInquire(watch.id)" [attr.aria-label]="'Inquire about ' + watch.name">
-              INQUIRE
-            </button>
+            <span class="btn btn--outline">VIEW DETAILS</span>
           </div>
-        </div>
+        </a>
         
         <div class="product-card__info">
           <h3 class="product-card__name">{{ watch.name }}</h3>

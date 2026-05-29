@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../components/header/header';
 import { FooterComponent } from '../../components/footer/footer';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-checkout',
@@ -10,4 +11,6 @@ import { FooterComponent } from '../../components/footer/footer';
   templateUrl: './checkout.html',
   styleUrl: './checkout.css',
 })
-export class CheckoutComponent {}
+export class CheckoutComponent {
+  cartService = inject(CartService);
+}

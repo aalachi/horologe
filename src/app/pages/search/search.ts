@@ -7,7 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
-  imports: [ReactiveFormsModule, CommonModule, HeaderComponent, FooterComponent],
+  imports: [RouterLink, ReactiveFormsModule, CommonModule, HeaderComponent, FooterComponent],
   templateUrl: './search.html',
   styleUrl: './search.css',
 })

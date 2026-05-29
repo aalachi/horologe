@@ -12,7 +12,7 @@
         <p class="login-header__body">Please enter your details to access your collection.</p>
       </header>
       
-      <form class="login-form" (submit)="$event.preventDefault()">
+      <form class="login-form" (submit)="onSubmit(); $event.preventDefault()">
         
         <div class="form-group">
           <label class="form-label" for="email">Email</label>

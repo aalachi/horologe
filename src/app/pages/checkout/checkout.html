@@ -87,45 +87,28 @@
       <div class="order-summary">
         <h3 class="order-summary__title">Order Summary</h3>
         <div class="order-items">
-          <!-- Product 1 -->
-          <div class="order-item">
-            <div class="order-item__image-container">
-              <img alt="Lune Perpétuelle" class="order-item__image" src="https://lh3.googleusercontent.com/aida/ADBb0uj3iTa6HECEMJe0XIBOdKSgWdNJfJtH6w3tEgzdsdLgJV8j9C48Jxhgqo9hQ7GvIhqdI-CxvskxUpDWp8ueSOL8a65Z3s3KZL5_bDoW_D97PesEETJYvsBHP6CRbLu0JJz_OVU5TSwlRW_rF51aNd_h4uKWcvprSyWPfWz1nV8AaYX_5PFrI_o5q5XJLYWjCpEck6-mQPblbKDzPW5FUaM_rKVFIXAZyYie43g7GuIwVHqGou5usTQG" />
+          @if (cartService.items().length === 0) {
+            <p class="order-empty">Your cart is empty. <a routerLink="/collections" class="order-empty__link">Browse Collections</a></p>
+          }
+          @for (item of cartService.items(); track item.product.id) {
+            <div class="order-item">
+              <div class="order-item__image-container">
+                <img [alt]="item.product.name" class="order-item__image" [src]="item.product.imageUrl" />
+              </div>
+              <div class="order-item__info">
+                <h4 class="order-item__title">{{ item.product.name }}</h4>
+                <p class="order-item__ref">Ref. {{ item.product.ref }}</p>
+                <p class="order-item__qty">Qty: {{ item.quantity }}</p>
+                <p class="order-item__price">€ {{ item.product.price * item.quantity | number }}</p>
+              </div>
             </div>
-            <div class="order-item__info">
-              <h4 class="order-item__title">Lune Perpétuelle</h4>
-              <p class="order-item__ref"> pelletsRef. HP-2024-LM</p>
-              <p class="order-item__price">$68,000.00</p>
-            </div>
-          </div>
-          <!-- Product 2 -->
-          <div class="order-item">
-            <div class="order-item__image-container">
-              <img alt="Tourbillon Perpétuelle" class="order-item__image" src="https://lh3.googleusercontent.com/aida/ADBb0ujI1JS8Yg6OWzR9NpuZby5MhYw6-bYbB-6R2Q1Ik_kQnX4ZaCchW871GvAdxtI1seoeJWolWtmeel8xhOEg8YNGltOb1KsGnt2NpXhjPg7HWk-LajKxxBJh1q6ueHVlu6Uq14NysF4SrnolZUU2hrMpAGMVcRVDKPPtDw7y70nGHlKeZQ4z0EfYu4pkim5ISW8eVLYGKeFQYRqBRzDeK-JoqjunaiwLTLjC9ufE145fzhVkBWA3DbQPN-M" />
-            </div>
-            <div class="order-item__info">
-              <h4 class="order-item__title">Tourbillon Perpétuelle</h4>
-              <p class="order-item__ref"> pelletsRef. HP-2024-TS</p>
-              <p class="order-item__price">$124,000.00</p>
-            </div>
-          </div>
-          <!-- Product 3 -->
-          <div class="order-item">
-            <div class="order-item__image-container">
-              <img alt="Chronographe Perpétuelle" class="order-item__image" src="https://lh3.googleusercontent.com/aida/ADBb0ujR_E3K1-A-ZfOaW5K1_X6Oq3v4E2F7W7uH8S9D0G1F2E3A4B5C6D7E8F9G0H1I2J3K4L5M6N7O8P9Q0R" />
-            </div>
-            <div class="order-item__info">
-              <h4 class="order-item__title">Chronographe Perpétuelle</h4>
-              <p class="order-item__ref"> pelletsRef. HP-2024-CP</p>
-              <p class="order-item__price">$52,500.00</p>
-            </div>
-          </div>
+          }
         </div>
 
         <div class="order-totals">
           <div class="order-totals-row">
             <span>Subtotal</span>
-            <span>$183,000.00</span>
+            <span>€ {{ cartService.cartTotal() | number }}</span>
           </div>
           <div class="order-totals-row">
             <span>Value Added Tax</span>
@@ -137,9 +120,9 @@
           </div>
           <div class="order-totals-row order-totals-row--total">
             <span class="order-totals-row__label" style="font-size: 14px; font-weight: 700;">Order Total</span>
-            <span>$183,000.00</span>
+            <span>€ {{ cartService.cartTotal() | number }}</span>
           </div>
-          <button class="btn-submit" routerLink="/checkout/verify">Place Payment</button>
+          <button class="btn-submit" [disabled]="cartService.items().length === 0" routerLink="/checkout/verify">Place Payment</button>
         </div>
       </div>
     </aside>

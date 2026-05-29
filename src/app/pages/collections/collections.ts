@@ -1,4 +1,5 @@
 import { Component, computed, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { HeaderComponent } from '../../components/header/header';
 import { FooterComponent } from '../../components/footer/footer';
 
@@ -18,7 +19,7 @@ export interface CollectionWatch {
 
 @Component({
   selector: 'app-collections',
-  imports: [HeaderComponent, FooterComponent],
+  imports: [RouterLink, HeaderComponent, FooterComponent],
   templateUrl: './collections.html',
   styleUrl: './collections.css',
 })
@@ -131,8 +132,16 @@ export class CollectionsComponent {
     this.activeSort.set((event.target as HTMLSelectElement).value);
   }
 
+  /** Returns the detail page route for a given watch id. Only lune-perpetuelle has a page for now. */
+  getProductRoute(watchId: string): string {
+    if (watchId === 'lune-perpetuelle') {
+      return '/product/lune-perpetuelle';
+    }
+    return '/concierge'; // other watches: direct to concierge for inquiry
+  }
+
   onInquire(watchId: string): void {
-    console.log(`Inquire clicked for: ${watchId}`);
+    // Handled by routerLink on each card
   }
 }
 

@@ -131,8 +131,8 @@ export const routes: Routes = [
   },
   {
     path: 'contact',
-    component: ContactComponent,
-    title: 'Concierge | HOROLOGE',
+    redirectTo: 'concierge',
+    pathMatch: 'full',
   },
 
   {
