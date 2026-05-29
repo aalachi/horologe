@@ -285,3 +285,25 @@
 .text-primary {
   color: var(--color-charcoal);
 }
+
+.btn-submit {
+  width: 100%;
+  margin-top: 2rem;
+  background-color: var(--color-charcoal);
+  color: var(--color-ivory);
+  padding: 1.25rem 0;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transition: all var(--dur-fast) var(--ease-luxury);
+  border: none;
+  cursor: pointer;
+}
+.btn-submit:hover {
+  background-color: #333333;
+}
+.btn-submit:active {
+  transform: scale(0.99);
+}

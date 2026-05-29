@@ -16,6 +16,11 @@ import { SearchComponent } from './pages/search/search';
 import { JournalComponent } from './pages/journal/journal';
 import { JournalArticleComponent } from './pages/journal-article/journal-article';
 import { CheckoutComponent } from './pages/checkout/checkout';
+import { CheckoutBankTransferComponent } from './pages/checkout-bank-transfer/checkout-bank-transfer';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy';
+import { TermsOfServiceComponent } from './pages/terms-of-service/terms-of-service';
+import { ShippingReturnsComponent } from './pages/shipping-returns/shipping-returns';
+import { ContactComponent } from './pages/contact/contact';
 
 export const routes: Routes = [
   {
@@ -64,6 +69,11 @@ export const routes: Routes = [
     title: 'Secure Checkout | HOROLOGE',
   },
   {
+    path: 'checkout/verify',
+    component: CheckoutBankTransferComponent,
+    title: 'Verify Transfer | HOROLOGE',
+  },
+  {
     path: 'login',
     component: LoginComponent,
     title: 'Secure Authentication | HOROLOGE',
@@ -103,6 +113,26 @@ export const routes: Routes = [
     path: 'search',
     component: SearchComponent,
     title: 'Search Results | HOROLOGE',
+  },
+  {
+    path: 'privacy-policy',
+    component: PrivacyPolicyComponent,
+    title: 'Privacy Policy | HOROLOGE',
+  },
+  {
+    path: 'terms-of-service',
+    component: TermsOfServiceComponent,
+    title: 'Terms of Service | HOROLOGE',
+  },
+  {
+    path: 'shipping-returns',
+    component: ShippingReturnsComponent,
+    title: 'Logistics as a Fine Art | HOROLOGE',
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
+    title: 'Concierge | HOROLOGE',
   },
 
   {

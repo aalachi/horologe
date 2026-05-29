@@ -3,6 +3,9 @@
    Vanilla CSS translation of the Google Stitch design
    ============================================================ */
 
+@import "stitch-theme.css";
+
+
 /* ---- Design Tokens ---- */
 :root {
   /* Color Palette */

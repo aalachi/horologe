@@ -1,0 +1,154 @@
+<app-header></app-header>
+<main class="page-verify animate-in">
+  <div class="verify-layout">
+    <!-- Left: Main Verification Flow (Cols 1-7) -->
+    <section class="verify-main">
+      <header class="verify-header">
+        <h1 class="verify-header__title">Verify Your Acquisition</h1>
+        <p class="verify-header__desc">
+          To finalize your transaction and secure your timepieces, please provide a digital copy (PDF) of your bank transfer receipt. Our concierges will process this immediately upon receipt.
+        </p>
+      </header>
+      
+      <!-- Bank Details Summary -->
+      <div class="bank-summary">
+        <div class="bank-summary__header">
+          <span class="bank-summary__label">TRANSACTION SUMMARY</span>
+          <span class="bank-summary__total">€148,400.00</span>
+        </div>
+        <div class="bank-summary__grid">
+          <div class="bank-field">
+            <label class="bank-summary__label">Account Holder</label>
+            <p class="bank-field__value">HOROLOGE MAISON S.A.</p>
+          </div>
+          <div class="bank-field">
+            <label class="bank-summary__label">Bank Name</label>
+            <p class="bank-field__value">Banque Privée de Genève</p>
+          </div>
+          <div class="bank-field">
+            <label class="bank-summary__label">IBAN</label>
+            <p class="bank-field__value bank-field__value--wide">CH76 0000 0000 1234 5678 9</p>
+          </div>
+          <div class="bank-field">
+            <label class="bank-summary__label">BIC / SWIFT</label>
+            <p class="bank-field__value bank-field__value--wide">BPGECH22XXX</p>
+          </div>
+          <div class="bank-field bank-field--full">
+            <label class="bank-summary__label">Order Reference</label>
+            <p class="bank-field__value bank-field__value--ref">HRLG-2024-99XJ-01</p>
+            <p class="bank-field__note">Please include this reference in your transfer notes.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Upload Area -->
+      <div class="upload-section">
+        <label class="bank-summary__label">PROOF OF TRANSFER</label>
+        
+        @if (!selectedFile) {
+          <div class="upload-zone" 
+               [class.upload-zone--dragover]="isDraggingOver"
+               (click)="fileInput.click()"
+               (dragover)="onDragOver($event)"
+               (dragleave)="onDragLeave($event)"
+               (drop)="onDrop($event)">
+            <input #fileInput type="file" accept=".pdf" class="hidden" (change)="onFileSelected($event)" />
+            <span class="material-symbols-outlined upload-zone__icon">picture_as_pdf</span>
+            <div>
+              <p class="upload-zone__title">Upload Proof of Transfer</p>
+              <p class="upload-zone__subtitle">DRAG & DROP OR CLICK TO BROWSE</p>
+            </div>
+          </div>
+        } @else {
+          <div class="upload-preview">
+            <div class="upload-preview__info">
+              <span class="material-symbols-outlined text-primary">description</span>
+              <span class="font-body-md text-primary">{{ selectedFile.name }}</span>
+            </div>
+            <button class="upload-preview__remove" (click)="removeFile()" aria-label="Remove file">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+        }
+      </div>
+      
+      <div class="verify-actions">
+        <button class="btn-complete">
+          Complete Verification
+        </button>
+      </div>
+    </section>
+    
+    <!-- Right: Order Summary Sidebar (Cols 9-12) -->
+    <aside class="verify-sidebar">
+      <div class="sidebar-sticky">
+        <h3 class="sidebar-header">YOUR ACQUISITION</h3>
+        <ul class="order-items">
+          <!-- Item 1 -->
+          <li class="order-item">
+            <div class="order-item__image-wrap">
+              <img src="https://lh3.googleusercontent.com/aida/ADBb0uj3iTa6HECEMJe0XIBOdKSgWdNJfJtH6w3tEgzdsdLgJV8j9C48Jxhgqo9hQ7GvIhqdI-CxvskxUpDWp8ueSOL8a65Z3s3KZL5_bDoW_D97PesEETJYvsBHP6CRbLu0JJz_OVU5TSwlRW_rF51aNd_h4uKWcvprSyWPfWz1nV8AaYX_5PFrI_o5q5XJLYWjCpEck6-mQPblbKDzPW5FUaM_rKVFIXAZyYie43g7GuIwVHqGou5usTQG" alt="Lune Perpétuelle" class="order-item__image" />
+            </div>
+            <div class="order-item__info">
+              <div>
+                <h4 class="order-item__title">Lune Perpétuelle</h4>
+                <p class="order-item__desc">PLATINUM / 40MM</p>
+              </div>
+              <p class="order-item__price">€54,200</p>
+            </div>
+          </li>
+          <!-- Item 2 -->
+          <li class="order-item">
+            <div class="order-item__image-wrap">
+              <img src="https://lh3.googleusercontent.com/aida/ADBb0ujI1JS8Yg6OWzR9NpuZby5MhYw6-bYbB-6R2Q1Ik_kQnX4ZaCchW871GvAdxtI1seoeJWolWtmeel8xhOEg8YNGltOb1KsGnt2NpXhjPg7HWk-LajKxxBJh1q6ueHVlu6Uq14NysF4SrnolZUU2hrMpAGMVcRVDKPPtDw7y70nGHlKeZQ4z0EfYu4pkim5ISW8eVLYGKeFQYRqBRzDeK-JoqjunaiwLTLjC9ufE145fzhVkBWA3DbQPN-M" alt="Tourbillon Squelette" class="order-item__image" />
+            </div>
+            <div class="order-item__info">
+              <div>
+                <h4 class="order-item__title">Tourbillon Squelette</h4>
+                <p class="order-item__desc">ROSE GOLD / LIMITED</p>
+              </div>
+              <p class="order-item__price">€68,000</p>
+            </div>
+          </li>
+          <!-- Item 3 -->
+          <li class="order-item">
+            <div class="order-item__image-wrap">
+              <img src="https://lh3.googleusercontent.com/aida/ADBb0ujR_E3K1-A-ZfOaW5K1_X6Oq3v4E2F7W7uH8S9D0G1F2E3A4B5C6D7E8F9G0H1I2J3K4L5M6N7O8P9Q0R" alt="Chronographe Perpétuelle" class="order-item__image" />
+            </div>
+            <div class="order-item__info">
+              <div>
+                <h4 class="order-item__title">Chronographe Perpétuelle</h4>
+                <p class="order-item__desc">STEEL / BRUSHED</p>
+              </div>
+              <p class="order-item__price">€26,200</p>
+            </div>
+          </li>
+        </ul>
+        
+        <div class="order-totals">
+          <div class="totals-row">
+            <span class="totals-row__label">Subtotal</span>
+            <span class="totals-row__value">€148,400</span>
+          </div>
+          <div class="totals-row">
+            <span class="totals-row__label">Insurance & Shipping</span>
+            <span class="totals-row__value">Complementary</span>
+          </div>
+          <div class="totals-row totals-row--main">
+            <span class="totals-row__label">Total</span>
+            <span class="totals-row__value">€148,400</span>
+          </div>
+        </div>
+        
+        <div class="insurance-note">
+          <span class="material-symbols-outlined insurance-note__icon">verified_user</span>
+          <div class="insurance-note__content">
+            <p class="insurance-note__title">INSURED TRANSACTION</p>
+            <p class="insurance-note__desc">Your acquisition is fully insured by Horologe Maison until it reaches your doorstep.</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+<app-footer></app-footer>

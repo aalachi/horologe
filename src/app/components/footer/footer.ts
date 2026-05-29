@@ -27,14 +27,14 @@ export class FooterComponent {
     {
       title: 'Legal',
       links: [
-        { label: 'Privacy Policy',   href: '/privacy' },
-        { label: 'Terms of Service', href: '/terms' },
+        { label: 'Privacy Policy',   href: '/privacy-policy' },
+        { label: 'Terms of Service', href: '/terms-of-service' },
       ],
     },
     {
       title: 'Support',
       links: [
-        { label: 'Shipping & Returns', href: '/shipping' },
+        { label: 'Shipping & Returns', href: '/shipping-returns' },
         { label: 'Contact',            href: '/contact' },
       ],
     },

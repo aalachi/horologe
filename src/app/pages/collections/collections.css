@@ -30,6 +30,7 @@
   background-color: var(--color-outline-var);
   opacity: 0.3;
 }
+
 .hairline--long {
   width: 83.333%;
   margin-bottom: 32px;
@@ -68,13 +69,16 @@
   letter-spacing: inherit;
   transition: color var(--dur-fast) var(--ease-luxury);
 }
+
 .filter-btn:hover {
   color: var(--color-charcoal);
 }
+
 .filter-btn__icon {
   font-size: 16px;
   transition: transform var(--dur-fast) var(--ease-luxury);
 }
+
 .filter-btn:hover .filter-btn__icon {
   transform: rotate(180deg);
 }
@@ -107,6 +111,7 @@
   text-transform: uppercase;
   cursor: pointer;
 }
+
 .sort-select:focus {
   outline: none;
   border-bottom-color: var(--color-charcoal);
@@ -151,6 +156,7 @@
   mix-blend-mode: multiply;
   transition: transform var(--dur-slow) var(--ease-luxury);
 }
+
 .product-card:hover .product-card__img {
   transform: scale(1.05);
 }
@@ -167,6 +173,7 @@
   opacity: 0;
   transition: opacity var(--dur-base) var(--ease-luxury);
 }
+
 .product-card:hover .product-card__overlay {
   opacity: 1;
 }
@@ -212,11 +219,13 @@
   cursor: pointer;
   transition: all var(--dur-fast) var(--ease-luxury);
 }
+
 .btn--outline {
   background-color: transparent;
   color: var(--color-charcoal);
   border: 1px solid var(--color-charcoal);
 }
+
 .btn--outline:hover {
   background-color: var(--color-charcoal);
   color: var(--color-white);
@@ -226,6 +235,7 @@
   padding: 16px 48px;
   letter-spacing: 0.1em;
 }
+
 .load-more {
   margin-top: 96px;
   display: flex;
@@ -239,11 +249,11 @@
     padding-left: var(--margin-desktop);
     padding-right: var(--margin-desktop);
   }
-  
+
   .collections-header__title {
     font-size: var(--text-display-lg);
   }
-  
+
   .hairline--long {
     width: 66.666%;
   }
@@ -251,18 +261,15 @@
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   /* Stagger the even items */
-  .product-card--offset {
-    margin-top: 48px;
-  }
+  .product-card--offset {}
 }
 
 @media (min-width: 1024px) {
   .product-grid {
     grid-template-columns: repeat(4, 1fr);
   }
-  .product-card--offset {
-    margin-top: 48px;
-  }
+
+  .product-card--offset {}
 }
