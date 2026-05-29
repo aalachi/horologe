@@ -13,6 +13,8 @@ import { ProfileCollectionComponent } from './pages/profile/collection/profile-c
 import { ProfileServiceHistoryComponent } from './pages/profile/service-history/profile-service-history';
 import { ProfilePreferencesComponent } from './pages/profile/preferences/profile-preferences';
 import { SearchComponent } from './pages/search/search';
+import { JournalComponent } from './pages/journal/journal';
+import { JournalArticleComponent } from './pages/journal-article/journal-article';
 
 export const routes: Routes = [
   {
@@ -39,6 +41,16 @@ export const routes: Routes = [
     path: 'product/lune-perpetuelle',
     component: ProductDetailComponent,
     title: 'Lune Perpétuelle | HOROLOGE',
+  },
+  {
+    path: 'journal',
+    component: JournalComponent,
+    title: 'Journal | HOROLOGE',
+  },
+  {
+    path: 'journal/:slug',
+    component: JournalArticleComponent,
+    title: 'Article | HOROLOGE',
   },
   {
     path: 'cart',
