@@ -38,6 +38,44 @@
   margin-top: 8px;
 }
 
+/* ---- Section Controls (Arrows + View All) ---- */
+.section__controls {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.section__arrows {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-right: 24px;
+  border-right: 1px solid rgba(196, 199, 199, 0.3); /* outline-variant/30 */
+}
+
+.arrow-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--color-primary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 300ms var(--ease-luxury);
+}
+
+.arrow-btn:hover {
+  color: var(--color-surface-tint);
+}
+
+.arrow-btn .material-symbols-outlined {
+  font-size: 20px;
+  font-weight: 200; /* thin */
+}
+
 /* "View All" link */
 .label-link {
   display: inline-flex;
@@ -50,9 +88,9 @@
   line-height: 1;
   text-transform: uppercase;
   color: var(--color-secondary);
-  transition: color var(--dur-fast) var(--ease-luxury);
+  transition: color 300ms var(--ease-luxury);
 }
-.label-link:hover { color: var(--color-charcoal); }
+.label-link:hover { color: var(--color-primary); }
 .label-link .material-symbols-outlined { font-size: 16px; }
 
 /* ---- Carousel ---- */
@@ -64,6 +102,7 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 .carousel::-webkit-scrollbar { display: none; }
 
@@ -116,4 +155,78 @@
   .section        { padding: var(--section-padding) var(--margin-desktop); }
   .section__header { flex-direction: row; justify-content: space-between; align-items: flex-end; }
   .watch-card     { min-width: 350px; }
+}
+
+/* ---- Scroll Hint ---- */
+.scroll-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+  opacity: 1;
+  transition: opacity 600ms var(--ease-luxury);
+  pointer-events: none;
+  user-select: none;
+}
+
+.scroll-hint--hidden {
+  opacity: 0;
+}
+
+/* Pill track */
+.scroll-hint__track {
+  position: relative;
+  width: 56px;
+  height: 10px;
+  background-color: var(--color-ivory-high);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+/* Sliding thumb that bounces left-to-right */
+.scroll-hint__thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 100%;
+  background-color: var(--color-charcoal);
+  border-radius: 999px;
+  animation: slide-thumb 1.6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@keyframes slide-thumb {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(34px); }
+  100% { transform: translateX(0); }
+}
+
+/* Label */
+.scroll-hint__label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+
+.scroll-hint__icon {
+  font-size: 18px;
+  color: var(--color-secondary);
+  animation: nudge-right 1.6s ease-in-out infinite;
+}
+
+@keyframes nudge-right {
+  0%, 100% { transform: translateX(0); opacity: 0.5; }
+  50%       { transform: translateX(4px); opacity: 1; }
+}
+
+/* Hide on large screens (hint is mainly needed on mobile) */
+@media (min-width: 1024px) {
+  .scroll-hint { display: none; }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, signal, ViewChild } from '@angular/core';
 
 export interface WatchCard {
   id: string;
@@ -45,4 +45,27 @@ export class CardsOneComponent {
       imageAlt: "Étoile Diamant — diamond-encrusted women's watch with mother-of-pearl dial on white silk",
     },
   ];
+
+  @ViewChild('carouselRef') carouselRef!: ElementRef<HTMLElement>;
+
+  scrollLeft(): void {
+    if (this.carouselRef) {
+      this.carouselRef.nativeElement.scrollBy({ left: -350, behavior: 'smooth' });
+    }
+  }
+
+  scrollRight(): void {
+    if (this.carouselRef) {
+      this.carouselRef.nativeElement.scrollBy({ left: 350, behavior: 'smooth' });
+    }
+  }
+
+  /** Becomes true once the user starts scrolling — hides the scroll hint */
+  hasScrolled = signal(false);
+
+  onCarouselScroll(): void {
+    if (!this.hasScrolled()) {
+      this.hasScrolled.set(true);
+    }
+  }
 }

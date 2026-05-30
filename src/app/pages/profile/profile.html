@@ -1,31 +1,33 @@
+<app-header />
 <main class="page-profile">
   <div class="profile-layout">
-    
+
     <!-- Sidebar Navigation -->
     <aside class="profile-sidebar">
       <nav class="profile-nav">
         <span class="profile-nav__label">MAISON ACCOUNT</span>
-        
-        <a class="profile-nav__link" routerLink="/profile" routerLinkActive="profile-nav__link--active" [routerLinkActiveOptions]="{exact: true}">
+
+        <a class="profile-nav__link" routerLink="/profile" routerLinkActive="profile-nav__link--active"
+          [routerLinkActiveOptions]="{exact: true}">
           <span class="material-symbols-outlined profile-nav__icon" aria-hidden="true">person</span>
           Profile
         </a>
-        
+
         <a class="profile-nav__link" routerLink="/profile/collection" routerLinkActive="profile-nav__link--active">
           <span class="material-symbols-outlined profile-nav__icon" aria-hidden="true">watch</span>
           My Collection
         </a>
-        
+
         <a class="profile-nav__link" routerLink="/profile/service-history" routerLinkActive="profile-nav__link--active">
           <span class="material-symbols-outlined profile-nav__icon" aria-hidden="true">history</span>
           Service History
         </a>
-        
+
         <a class="profile-nav__link" routerLink="/profile/preferences" routerLinkActive="profile-nav__link--active">
           <span class="material-symbols-outlined profile-nav__icon" aria-hidden="true">settings</span>
           Preferences
         </a>
-        
+
         <div class="profile-nav__divider">
           <button class="profile-nav__link profile-nav__link--danger">
             <span class="material-symbols-outlined profile-nav__icon" aria-hidden="true">logout</span>
@@ -34,11 +36,11 @@
         </div>
       </nav>
     </aside>
-    
+
     <!-- Main Content Area -->
     <div class="profile-content">
       <router-outlet></router-outlet>
     </div>
-    
+
   </div>
 </main>

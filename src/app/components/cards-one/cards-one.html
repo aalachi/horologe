@@ -6,14 +6,24 @@
       <h2 class="section__title" id="arrivals-heading">New Arrivals</h2>
       <div class="hairline hairline--short" aria-hidden="true"></div>
     </div>
-    <a href="/collections" class="label-link" aria-label="View all watches in the collection">
-      View All
-      <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
-    </a>
+    <div class="section__controls">
+      <div class="section__arrows">
+        <button aria-label="Previous Item" class="arrow-btn" (click)="scrollLeft()">
+          <span class="material-symbols-outlined font-thin text-[20px]">arrow_back_ios</span>
+        </button>
+        <button aria-label="Next Item" class="arrow-btn" (click)="scrollRight()">
+          <span class="material-symbols-outlined font-thin text-[20px]">arrow_forward_ios</span>
+        </button>
+      </div>
+      <a href="/collections" class="label-link" aria-label="View all watches in the collection">
+        View All
+        <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+      </a>
+    </div>
   </div>
 
   <!-- Carousel -->
-  <div class="carousel" role="list" aria-label="New arrivals watch carousel" id="arrivals-carousel">
+  <div class="carousel" role="list" aria-label="New arrivals watch carousel" id="arrivals-carousel" #carouselRef>
     @for (watch of watches; track watch.id) {
       <article class="watch-card" role="listitem" [id]="'card-' + watch.id">
         <div class="watch-card__img-wrap">

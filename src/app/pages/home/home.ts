@@ -3,6 +3,7 @@ import { HeaderComponent }   from '../../components/header/header';
 import { HeroComponent }     from '../../components/hero/hero';
 import { CardsOneComponent } from '../../components/cards-one/cards-one';
 import { CardsTwoComponent } from '../../components/cards-two/cards-two';
+import { JournalBannerComponent } from '../../components/journal-banner/journal-banner';
 import { FooterComponent }   from '../../components/footer/footer';
 
 @Component({
@@ -11,6 +12,7 @@ import { FooterComponent }   from '../../components/footer/footer';
     HeaderComponent,
     HeroComponent,
     CardsOneComponent,
+    JournalBannerComponent,
     CardsTwoComponent,
     FooterComponent,
   ],
